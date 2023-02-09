@@ -30,13 +30,7 @@ const projects = [
 const HeroTemplate = ({ handleNextPage }: HeroProps) => {
   return (
     <section className={styles.hero}>
-      <Swiper>
-        {projects.map((project) => (
-          <SwiperSlide key={project.id}>
-            <ProjectSlide project={project} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+
       <button onClick={handleNextPage}>
         <Image
           src={chevronDown}
