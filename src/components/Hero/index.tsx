@@ -5,7 +5,7 @@ import chevronDown from '@/assets/chevron-down.svg';
 import Image from 'next/image';
 import 'swiper/css/effect-fade';
 
-import styles from '@/styles/hero.module.scss';
+import styles from '@/styles/Hero.module.scss';
 import { memo } from 'react';
 
 interface HeroProps {
