@@ -1,0 +1,52 @@
+.projectSlide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  color: var(--white);
+  padding-inline: 2rem;
+  gap: 1rem;
+  background-position: center;
+  background-size: cover;
+
+  @media (min-width: 768px) {
+    padding-inline: 4rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+
+  p {
+    max-width: 220px;
+    text-align: center;
+
+    @media (min-width: 375px) {
+      max-width: 250px;
+    }
+
+    @media (min-width: 550px) {
+      max-width: 350px;
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 2rem;
+    background: var(--white);
+    color: var(--black);
+    font-weight: 700;
+    border-radius: 20px 0 20px 0;
+    margin-top: 1.3rem;
+    margin-inline: auto;
+  }
+}

@@ -1,4 +1,5 @@
 import { Header } from '@/components/Header';
+import { Hero } from '@/components/Hero';
 import Head from 'next/head';
 import { useState } from 'react';
 import { Mousewheel, Pagination } from 'swiper';
@@ -13,6 +14,10 @@ export default function Home() {
 
   function handleChangeActivePage(id: number) {
     mainSwiper?.slideTo(id);
+  }
+
+  function handleNextPage() {
+    mainSwiper?.slideNext();
   }
 
   return (
@@ -38,7 +43,7 @@ export default function Home() {
           speed={1000}
           onSlideChange={(swiper) => setActivePageId(swiper.activeIndex)}>
           <SwiperSlide>
-            <p>1</p>
+            <Hero handleNextPage={handleNextPage} />
           </SwiperSlide>
           <SwiperSlide>
             <p>2</p>
