@@ -13,7 +13,10 @@ interface HeaderProps {
 
 export const Header = ({ activePageId, mainSwiper }: HeaderProps) => {
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        activePageId !== 0 ? styles.scrolled : ''
+      }`}>
       <Image
         src={logoImg}
         alt="Logo"
@@ -25,7 +28,9 @@ export const Header = ({ activePageId, mainSwiper }: HeaderProps) => {
         {menu.map(({ id, name }) => (
           <button
             key={id}
-            className={activePageId == id ? styles.active : ''}
+            className={`${activePageId == id ? styles.active : ''} ${
+              [0, 2].includes(activePageId) ? styles.white : styles.black
+            }`}
             onClick={() => mainSwiper?.slideTo(id)}>
             {name}
           </button>

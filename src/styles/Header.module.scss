@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 1s;
 
   @media (min-width: 768px) {
     padding-inline: 4rem;
@@ -16,9 +17,19 @@
 
   img {
     width: 72px;
+    transition: all 0.6s;
+    filter: var(--image-white);
 
     @media (min-width: 768px) {
       width: 128px;
+    }
+  }
+
+  &.scrolled {
+    height: 6rem;
+
+    img {
+      opacity: 0;
     }
   }
 
@@ -33,17 +44,32 @@
     button {
       background: transparent;
       text-transform: uppercase;
-      color: var(--white);
       border: 0;
       font-size: 1rem;
       padding: 0.5rem 0;
       position: relative;
+      transition: all 1s;
+
+      &.white {
+        color: var(--white);
+
+        &::after {
+          background: var(--white);
+        }
+      }
+
+      &.black {
+        color: var(--black);
+
+        &::after {
+          background: var(--black);
+        }
+      }
 
       &::after {
         content: '';
         width: 0;
         height: 2px;
-        background: var(--white);
         position: absolute;
         bottom: 0.25rem;
         left: 0;

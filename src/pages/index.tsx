@@ -1,5 +1,6 @@
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { Projects } from '@/components/Projects';
 import Head from 'next/head';
 import { useState } from 'react';
 import { Mousewheel, Pagination } from 'swiper';
@@ -37,7 +38,7 @@ export default function Home() {
             <Hero mainSwiper={mainSwiper} />
           </SwiperSlide>
           <SwiperSlide>
-            <p>2</p>
+            <Projects />
           </SwiperSlide>
           <SwiperSlide>
             <p>3</p>
