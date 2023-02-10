@@ -2,14 +2,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { ProjectSlide } from './ProjectSlide';
 
 import chevronDown from '@/assets/chevron-down.svg';
-import Image from 'next/image';
-import 'swiper/css/effect-fade';
-
 import styles from '@/styles/Hero.module.scss';
+import Image from 'next/image';
 import { memo } from 'react';
+import { Autoplay, EffectFade } from 'swiper';
+import 'swiper/css/effect-fade';
+import SwiperType from 'swiper/types/swiper-class';
 
 interface HeroProps {
-  handleNextPage: () => void;
+  mainSwiper: SwiperType | null;
 }
 
 const projects = [
@@ -27,11 +28,24 @@ const projects = [
     banner: 'casa-floresta',
   },
 ];
-const HeroTemplate = ({ handleNextPage }: HeroProps) => {
+
+const HeroTemplate = ({ mainSwiper }: HeroProps) => {
   return (
     <section className={styles.hero}>
-
-      <button onClick={handleNextPage}>
+      <Swiper
+        modules={[Autoplay, EffectFade]}
+        effect="fade"
+        speed={1000}
+        autoplay={{
+          delay: 7000,
+        }}>
+        {projects.map((project) => (
+          <SwiperSlide key={project.id}>
+            <ProjectSlide project={project} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <button onClick={() => mainSwiper?.slideNext()}>
         <Image
           src={chevronDown}
           alt=""

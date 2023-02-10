@@ -12,14 +12,6 @@ export default function Home() {
   const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
   const [activePageId, setActivePageId] = useState(0);
 
-  function handleChangeActivePage(id: number) {
-    mainSwiper?.slideTo(id);
-  }
-
-  function handleNextPage() {
-    mainSwiper?.slideNext();
-  }
-
   return (
     <>
       <Head>
@@ -31,19 +23,19 @@ export default function Home() {
       </Head>
       <Header
         activePageId={activePageId}
-        handleChangeActivePage={handleChangeActivePage}
+        mainSwiper={mainSwiper}
       />
       <main>
         <Swiper
           onSwiper={setMainSwiper}
           direction="vertical"
-          mousewheel={true}
+          mousewheel
           modules={[Mousewheel, Pagination]}
           pagination
           speed={1000}
           onSlideChange={(swiper) => setActivePageId(swiper.activeIndex)}>
           <SwiperSlide>
-            <Hero handleNextPage={handleNextPage} />
+            <Hero mainSwiper={mainSwiper} />
           </SwiperSlide>
           <SwiperSlide>
             <p>2</p>

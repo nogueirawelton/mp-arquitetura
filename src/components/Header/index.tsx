@@ -1,20 +1,17 @@
 import logoImg from '@/assets/logo.svg';
-import Image from 'next/image';
-
 import styles from '@/styles/Header.module.scss';
+import Image from 'next/image';
+import SwiperType from 'swiper/types/swiper-class';
 
 import menu from '@/menu.json';
 import { TextAlignLeft } from 'phosphor-react';
 
 interface HeaderProps {
   activePageId: number;
-  handleChangeActivePage: (id: number) => void;
+  mainSwiper: SwiperType | null;
 }
 
-export const Header = ({
-  activePageId,
-  handleChangeActivePage,
-}: HeaderProps) => {
+export const Header = ({ activePageId, mainSwiper }: HeaderProps) => {
   return (
     <header className={styles.header}>
       <Image
@@ -29,7 +26,7 @@ export const Header = ({
           <button
             key={id}
             className={activePageId == id ? styles.active : ''}
-            onClick={() => handleChangeActivePage(id)}>
+            onClick={() => mainSwiper?.slideTo(id)}>
             {name}
           </button>
         ))}
