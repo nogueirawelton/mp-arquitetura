@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Mousewheel, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -11,6 +11,11 @@ import SwiperType from 'swiper/types/swiper-class';
 export default function Home() {
   const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
   const [activePageId, setActivePageId] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
+
+  useEffect(() => {
+    setWindowHeight(window.innerHeight);
+  });
 
   return (
     <>
@@ -33,7 +38,10 @@ export default function Home() {
           modules={[Mousewheel, Pagination]}
           pagination
           speed={1000}
-          onSlideChange={(swiper) => setActivePageId(swiper.activeIndex)}>
+          onSlideChange={(swiper) => setActivePageId(swiper.activeIndex)}
+          style={{
+            height: windowHeight + 'px',
+          }}>
           <SwiperSlide>
             <Hero mainSwiper={mainSwiper} />
           </SwiperSlide>
