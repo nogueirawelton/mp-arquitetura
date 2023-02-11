@@ -12,6 +12,8 @@ interface HeaderProps {
 }
 
 export const Header = ({ activePageId, mainSwiper }: HeaderProps) => {
+  const isWhite = [0, 2].includes(activePageId);
+
   return (
     <header
       className={`${styles.header} ${
@@ -29,7 +31,7 @@ export const Header = ({ activePageId, mainSwiper }: HeaderProps) => {
           <button
             key={id}
             className={`${activePageId == id ? styles.active : ''} ${
-              [0, 2].includes(activePageId) ? styles.white : styles.black
+              isWhite ? styles.white : styles.black
             }`}
             onClick={() => mainSwiper?.slideTo(id)}>
             {name}
@@ -39,7 +41,7 @@ export const Header = ({ activePageId, mainSwiper }: HeaderProps) => {
       <button data-menu="open">
         <TextAlignLeft
           size={32}
-          color="#ffffff"
+          color={isWhite ? '#ffffff' : '#222222'}
         />
       </button>
     </header>

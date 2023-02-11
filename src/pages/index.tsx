@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Projects } from '@/components/Projects';
+import styles from '@/styles/Home.module.scss';
 import Head from 'next/head';
 import { useState } from 'react';
 import { Mousewheel, Pagination } from 'swiper';
@@ -12,6 +13,9 @@ import SwiperType from 'swiper/types/swiper-class';
 export default function Home() {
   const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
   const [activePageId, setActivePageId] = useState(0);
+
+  const isWhite = [0, 2].includes(activePageId);
+
   return (
     <>
       <Head>
@@ -25,7 +29,8 @@ export default function Home() {
         activePageId={activePageId}
         mainSwiper={mainSwiper}
       />
-      <main>
+      <main
+        className={`${styles.main} ${isWhite ? styles.white : styles.black}`}>
         <Swiper
           onSwiper={setMainSwiper}
           direction="vertical"

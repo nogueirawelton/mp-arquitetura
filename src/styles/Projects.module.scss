@@ -1,7 +1,11 @@
 .projects {
   display: grid;
-  grid-template-columns: 375px 1fr;
+  grid-template-columns: 1fr;
   height: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 375px 1fr;
+  }
 
   .projectsControls {
     background: var(--black);
