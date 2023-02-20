@@ -29,7 +29,19 @@
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
 
+      @media (min-width: 550px) {
+        gap: 2.5rem;
+      }
+
+      @media (min-width: 550px) {
+        gap: 1rem;
+      }
+
       button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
         height: 3rem;
         padding-inline: 1rem;
         border: 0;
@@ -49,22 +61,38 @@
 
   .projectsContainer {
     background: var(--white);
-    height: 100%;
-    @media (min-width: 1024px) {
-      width: calc(100vw - 375px);
-    }
+    height: calc(100% - 154px);
+    padding: 2rem;
+    position: relative;
 
     .wrapper {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 2rem;
-      padding-inline: 2rem;
-      padding-right: calc(4rem + 10px);
+      height: 100%;
+    }
 
-      @media (min-width: 1024px) {
-        padding-right: calc(8rem + 10px);
-        grid-template-columns: 1fr 1fr;
+    small {
+      margin-top: 0.5rem;
+      display: block;
+      color: var(--black);
+      font-size: 0.875rem;
+    }
+
+    .social {
+      margin-top: auto;
+      position: absolute;
+      bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--black);
       }
     }
   }
