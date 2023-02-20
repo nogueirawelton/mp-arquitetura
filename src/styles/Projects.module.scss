@@ -1,17 +1,71 @@
 .projects {
-  display: grid;
   grid-template-columns: 1fr;
   height: 100%;
 
-  @media (min-width: 768px) {
+  @media (min-width: 840px) {
+    display: grid;
     grid-template-columns: 375px 1fr;
   }
 
   .projectsControls {
     background: var(--black);
+    padding: 0 2rem 2rem 2rem;
+
+    header {
+      height: 6rem;
+      padding-block: 2rem;
+      display: flex;
+      align-items: center;
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 1.75rem;
+        color: var(--white);
+      }
+    }
+
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+
+      button {
+        height: 3rem;
+        padding-inline: 1rem;
+        border: 0;
+        border-radius: 20px 0 20px 0;
+        background: rgba($color: #ffffff, $alpha: 0.05);
+        color: var(--white);
+        font-weight: 500;
+
+        &.active {
+          background: var(--white);
+          color: var(--black);
+          font-weight: 700;
+        }
+      }
+    }
   }
 
   .projectsContainer {
     background: var(--white);
+    height: 100%;
+    @media (min-width: 1024px) {
+      width: calc(100vw - 375px);
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2rem;
+      padding-inline: 2rem;
+      padding-right: calc(4rem + 10px);
+
+      @media (min-width: 1024px) {
+        padding-right: calc(8rem + 10px);
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   }
 }
