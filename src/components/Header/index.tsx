@@ -5,6 +5,7 @@ import SwiperType from 'swiper/types/swiper-class';
 
 import menu from '@/menu.json';
 import { TextAlignLeft } from 'phosphor-react';
+import { useEffect, useState } from 'react';
 
 interface HeaderProps {
   activePageId: number;
@@ -13,6 +14,11 @@ interface HeaderProps {
 
 export const Header = ({ activePageId, mainSwiper }: HeaderProps) => {
   const isWhite = [0, 2].includes(activePageId);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth > 840);
+  });
 
   return (
     <header
@@ -41,7 +47,7 @@ export const Header = ({ activePageId, mainSwiper }: HeaderProps) => {
       <button data-menu="open">
         <TextAlignLeft
           size={32}
-          color={isWhite ? '#ffffff' : '#222222'}
+          color={!isDesktop ?? isWhite ? '#ffffff' : '#222222'}
         />
       </button>
     </header>

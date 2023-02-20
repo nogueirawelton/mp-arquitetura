@@ -11,7 +11,7 @@
   justify-content: space-between;
   transition: height 1s;
 
-  @media (min-width: 768px) {
+  @media (min-width: 840px) {
     padding-inline: 4rem;
   }
 
@@ -20,7 +20,7 @@
     transition: opacity 0.6s;
     filter: var(--image-white);
 
-    @media (min-width: 768px) {
+    @media (min-width: 840px) {
       width: auto;
       height: 100%;
     }
@@ -38,7 +38,7 @@
     display: none;
     gap: 1.5rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 840px) {
       display: flex;
     }
 
@@ -92,7 +92,7 @@
     border: 0;
     padding: 0.5rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 840px) {
       display: none;
     }
   }

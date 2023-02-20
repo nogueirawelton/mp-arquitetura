@@ -6,13 +6,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Project } from './Project';
 
 export const Projects = () => {
-  const [chunkLimitter, setChunkLimitter] = useState(2);
+  const [chunkLimitter, setChunkLimitter] = useState(1);
 
   useEffect(() => {
     if (window.innerWidth >= 1024) {
       setChunkLimitter(4);
-    } else {
-      setChunkLimitter(1);
     }
   });
 
@@ -52,7 +50,12 @@ export const Projects = () => {
       </div>
       <div className={styles.projectsContainer}>
         <Swiper
-          spaceBetween={10}
+          spaceBetween={32}
+          breakpoints={{
+            650: {
+              slidesPerView: 2,
+            },
+          }}
           style={{
             height: 'calc(100% - 61px - 2rem);',
           }}>
