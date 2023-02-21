@@ -1,7 +1,6 @@
 import styles from '@/styles/Projects.module.scss';
 import Link from 'next/link';
 import { BookOpen, InstagramLogo, LinkedinLogo, User } from 'phosphor-react';
-import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Project } from './Project';
 
@@ -34,10 +33,6 @@ export const Projects = () => {
         <Swiper
           className={styles.projectsSwiper}
           spaceBetween={32}
-          modules={[Autoplay]}
-          autoplay={{
-            delay: 7000,
-          }}
           breakpoints={{
             650: {
               slidesPerView: 2,
