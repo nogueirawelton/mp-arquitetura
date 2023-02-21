@@ -1,29 +1,11 @@
 import styles from '@/styles/Projects.module.scss';
 import Link from 'next/link';
 import { BookOpen, InstagramLogo, LinkedinLogo, User } from 'phosphor-react';
-import { useEffect, useState } from 'react';
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Project } from './Project';
 
 export const Projects = () => {
-  const [chunkLimitter, setChunkLimitter] = useState(1);
-
-  useEffect(() => {
-    if (window.innerWidth >= 1024) {
-      setChunkLimitter(4);
-    }
-  });
-
-  const chunks = Array.from(Array(10).keys()).reduce((result, item, index) => {
-    const chunkIndex = Math.floor(index / chunkLimitter);
-
-    if (!result[chunkIndex]) {
-      result[chunkIndex] = [];
-    }
-    result[chunkIndex].push(item);
-    return result;
-  }, [] as any);
-
   return (
     <section className={styles.projects}>
       <div className={styles.projectsControls}>
@@ -50,23 +32,24 @@ export const Projects = () => {
       </div>
       <div className={styles.projectsContainer}>
         <Swiper
+          className={styles.projectsSwiper}
           spaceBetween={32}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 7000,
+          }}
           breakpoints={{
             650: {
               slidesPerView: 2,
             },
-          }}
-          style={{
-            height: 'calc(100% - 61px - 2rem);',
+            840: {
+              slidesPerView: 1,
+            },
           }}>
-          {chunks.map((chunk: any) => {
+          {Array.from(Array(10).keys()).map((chunk: any, index: number) => {
             return (
-              <SwiperSlide>
-                <div className={styles.wrapper}>
-                  {chunk.map((slide: any) => (
-                    <Project />
-                  ))}
-                </div>
+              <SwiperSlide key={index}>
+                <Project />
               </SwiperSlide>
             );
           })}

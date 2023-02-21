@@ -1,9 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ProjectSlide } from './ProjectSlide';
 
-import chevronDown from '@/assets/chevron-down.svg';
 import styles from '@/styles/Hero.module.scss';
-import Image from 'next/image';
+import { CaretDown } from 'phosphor-react';
 import { memo } from 'react';
 import { Autoplay, EffectFade } from 'swiper';
 import 'swiper/css/effect-fade';
@@ -46,9 +45,9 @@ const HeroTemplate = ({ mainSwiper }: HeroProps) => {
         ))}
       </Swiper>
       <button onClick={() => mainSwiper?.slideNext()}>
-        <Image
-          src={chevronDown}
-          alt=""
+        <CaretDown
+          size={42}
+          color="#ffffff"
         />
       </button>
     </section>
