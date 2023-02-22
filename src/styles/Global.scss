@@ -7,10 +7,9 @@
 :root {
   --white: #ffffff;
   --black: #222222;
-  --image-white: brightness(0) saturate(100%) invert(100%) sepia(99%)
-    saturate(2%) hue-rotate(233deg) brightness(104%) contrast(100%);
-  --image-black: brightness(0) saturate(100%) invert(10%) sepia(13%)
-    saturate(0%) hue-rotate(217deg) brightness(104%) contrast(94%);
+
+  --gray-500: #d9d9d9;
+  --gray-700: #c9c9c9;
 }
 
 html {
@@ -20,7 +19,7 @@ html {
     font-size: 93.75%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
     font-size: 87.5%;
   }
 }

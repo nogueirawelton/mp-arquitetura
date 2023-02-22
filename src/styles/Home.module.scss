@@ -26,21 +26,17 @@
   :global(.swiper) {
     height: calc(100vh - 4rem);
 
-    @media (min-width: 768px) {
+    @media (min-width: 1080px) {
       height: 100vh;
     }
 
     :global(.swiper-pagination) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      transform: none !important;
-      inset: auto !important;
-      bottom: 2rem !important;
-      right: 2rem !important;
-
-      @media (min-width: 840px) {
+      display: none;
+      @media (min-width: 1080px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
         inset: auto !important;
         right: 4rem !important;
         top: 50% !important;

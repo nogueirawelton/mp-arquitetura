@@ -10,7 +10,7 @@
   background-position: center;
   background-size: cover;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1080px) {
     padding-inline: 4rem;
   }
 
@@ -23,7 +23,7 @@
     opacity: 0;
     animation-name: slideBottom;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1080px) {
       font-size: 3rem;
     }
   }
@@ -60,7 +60,7 @@
     margin-top: 1.3rem;
     margin-inline: auto;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1080px) {
       width: 150px;
     }
   }

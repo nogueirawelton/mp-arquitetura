@@ -17,7 +17,7 @@ export const Header = ({ activePageId, mainSwiper }: HeaderProps) => {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    setIsDesktop(window.innerWidth > 840);
+    setIsDesktop(window.innerWidth > 1080);
   });
 
   return (

@@ -54,11 +54,14 @@ export const Projects = () => {
           className={styles.projectsSwiper}
           spaceBetween={32}
           breakpoints={{
-            650: {
+            876: {
               slidesPerView: 2,
             },
-            840: {
+            1080: {
               slidesPerView: 1,
+            },
+            1440: {
+              slidesPerView: 2,
             },
           }}>
           {Array.from(Array(10).keys()).map((chunk: any, index: number) => {
