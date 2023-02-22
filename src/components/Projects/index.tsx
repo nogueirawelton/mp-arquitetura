@@ -1,4 +1,6 @@
+import leafImg from '@/assets/projects-leaf.svg';
 import styles from '@/styles/Projects.module.scss';
+import Image from 'next/image';
 import Link from 'next/link';
 import { BookOpen, InstagramLogo, LinkedinLogo, User } from 'phosphor-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,7 +13,7 @@ export const Projects = () => {
         <header>
           <h2>Meus Projetos</h2>
         </header>
-        <div>
+        <div className={styles.controls}>
           <button className={styles.active}>
             <User
               size={20}
@@ -27,6 +29,24 @@ export const Projects = () => {
             />
             Acadêmicos
           </button>
+        </div>
+        <Image
+          src={leafImg}
+          alt="Leaf"
+        />
+        <div className={styles.social}>
+          <Link href="#">
+            <LinkedinLogo
+              color="#222222"
+              size={32}
+            />
+          </Link>
+          <Link href="#">
+            <InstagramLogo
+              color="#222222"
+              size={32}
+            />
+          </Link>
         </div>
       </div>
       <div className={styles.projectsContainer}>

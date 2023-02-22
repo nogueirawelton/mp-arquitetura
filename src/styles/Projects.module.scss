@@ -10,6 +10,7 @@
   .projectsControls {
     background: var(--black);
     padding: 0 2rem 2rem 2rem;
+    position: relative;
 
     header {
       height: 6rem;
@@ -24,10 +25,12 @@
       }
     }
 
-    div {
+    .controls {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
+      position: relative;
+      z-index: 10;
 
       @media (min-width: 550px) {
         gap: 2.5rem;
@@ -57,6 +60,41 @@
         }
       }
     }
+
+    img {
+      display: none;
+      position: absolute;
+      left: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 0;
+
+      @media (min-width: 840px) {
+        display: block;
+      }
+    }
+
+    .social {
+      margin-top: auto;
+      position: absolute;
+      bottom: 2rem;
+      display: none;
+      gap: 1rem;
+
+      @media (min-width: 840px) {
+        display: flex;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: var(--white);
+      }
+    }
   }
 
   .projectsContainer {
@@ -81,7 +119,7 @@
       height: 100vh;
       width: calc(100vw - 375px);
       padding: 6rem 2rem 2rem;
-      padding-right: calc(6rem + 10px);
+      padding-right: calc(8rem + 10px);
     }
 
     small {
@@ -89,6 +127,7 @@
       display: block;
       color: var(--black);
       font-size: 0.875rem;
+      font-style: italic;
     }
 
     .social {
