@@ -38,13 +38,13 @@ export const Projects = () => {
           <Link href="#">
             <LinkedinLogo
               color="#222222"
-              size={32}
+              size={24}
             />
           </Link>
           <Link href="#">
             <InstagramLogo
               color="#222222"
-              size={32}
+              size={24}
             />
           </Link>
         </div>

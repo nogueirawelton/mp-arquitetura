@@ -1,15 +1,36 @@
 .about {
-  max-width: 1920px;
-  margin-inline: auto;
   padding-inline: 1rem;
-  padding-top: 5rem;
+  position: relative;
+  overflow: hidden;
 
-  @media (min-width: 1080px) {
-    padding-top: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    padding-inline: calc(8rem + 10px);
+  .container {
+    max-width: 1920px;
+    margin-inline: auto;
+    padding-top: 5rem;
+    height: 100%;
+
+    @media (min-width: 1080px) {
+      padding-top: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding-inline: calc(8rem + 10px);
+    }
+  }
+
+  .ornament {
+    position: absolute;
+    top: 50%;
+    max-width: 1280px;
+    object-fit: cover;
+    width: 100%;
+    right: 0;
+    transform: translateY(-50%);
+
+    @media (min-width: 1024px) {
+      object-fit: fill;
+      right: -3rem;
+    }
   }
 
   .photo {
@@ -27,8 +48,8 @@
       &::after {
         content: '';
         position: absolute;
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         background: var(--white);
         top: 0;
         z-index: -1;
@@ -48,8 +69,8 @@
       }
 
       img {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         object-fit: cover;
         object-position: center -10px;
