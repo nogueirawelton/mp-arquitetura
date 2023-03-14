@@ -37,6 +37,7 @@
       }
 
       @media (min-width: 1080px) {
+        grid-template-columns: 1fr;
         gap: 1rem;
       }
 
@@ -49,7 +50,7 @@
         padding-inline: 1rem;
         border: 0;
         border-radius: 20px 0 20px 0;
-        background: rgba($color: #ffffff, $alpha: 0.05);
+        background: #2d2d2d;
         color: var(--white);
         font-weight: 500;
 
@@ -111,7 +112,7 @@
       height: 100vh;
       width: calc(100vw - 375px);
       padding: 6rem 2rem 2rem;
-      padding-right: calc(8rem + 10px);
+      padding-right: 4rem;
     }
 
     .projectsSwiper {

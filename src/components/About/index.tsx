@@ -1,5 +1,3 @@
-import leafImage from '@/assets/profile-leaf.svg';
-import profileImg from '@/assets/profile.jpg';
 import styles from '@/styles/About.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,14 +9,18 @@ export const About = () => {
       <div className={styles.container}>
         <Image
           className={styles.ornament}
-          src={leafImage}
+          src="/assets/ornament/profile-leaf.svg"
           alt="Leaf"
+          width={1280}
+          height={2000}
         />
         <div className={styles.photo}>
           <div>
             <Image
-              src={profileImg}
+              src="/assets/img/profile.jpg"
               alt="Mariana de Paula"
+              width={450}
+              height={450}
             />
           </div>
         </div>

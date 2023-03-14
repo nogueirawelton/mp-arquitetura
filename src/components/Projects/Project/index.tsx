@@ -2,14 +2,15 @@ import styles from '@/styles/Project.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'phosphor-react';
-import exampleProjectImage from '@/assets/casa-moderna.jpg';
 
 export const Project = () => {
   return (
     <div className={styles.project}>
       <Image
-        src={exampleProjectImage}
+        src="/assets/img/casa-moderna.webp"
         alt="Casa Moderna"
+        width={450}
+        height={465}
       />
       <Link
         className={styles.hover}

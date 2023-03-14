@@ -1,4 +1,3 @@
-import leafImg from '@/assets/projects-leaf.svg';
 import styles from '@/styles/Projects.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,8 +30,10 @@ export const Projects = () => {
           </button>
         </div>
         <Image
-          src={leafImg}
+          src="/assets/ornament/projects-leaf.svg"
           alt="Leaf"
+          width={600}
+          height={600}
         />
         <div className={styles.social}>
           <Link href="#">

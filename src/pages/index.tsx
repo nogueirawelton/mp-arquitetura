@@ -5,18 +5,22 @@ import { Hero } from '@/components/Hero';
 import { Projects } from '@/components/Projects';
 import styles from '@/styles/Home.module.scss';
 import Head from 'next/head';
-import { useState } from 'react';
-import { Mousewheel, Pagination } from 'swiper';
+import { useEffect, useState } from 'react';
+import { Mousewheel } from 'swiper';
 import 'swiper/css';
-import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperType from 'swiper/types/swiper-class';
 
 export default function Home() {
   const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
   const [activePageId, setActivePageId] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const isWhite = [0, 2].includes(activePageId);
+
+  useEffect(() => {
+    setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+  });
 
   return (
     <>
@@ -37,8 +41,7 @@ export default function Home() {
           onSwiper={setMainSwiper}
           direction="vertical"
           mousewheel
-          modules={[Mousewheel, Pagination]}
-          pagination
+          modules={[Mousewheel]}
           speed={1000}
           onSlideChange={(swiper) => setActivePageId(swiper.activeIndex)}>
           <SwiperSlide>

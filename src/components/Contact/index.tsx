@@ -1,4 +1,3 @@
-import logoAlt from '@/assets/logo-alt.svg';
 import styles from '@/styles/Contact.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -74,8 +73,10 @@ export const Contact = () => {
           </div>
           <div className={styles.social}>
             <Image
-              src={logoAlt}
+              src="/assets/img/logo-alt.svg"
               alt="Logo Alternativa"
+              width={300}
+              height={300}
             />
             <div className={styles.links}>
               <strong>Redes Sociais</strong>
