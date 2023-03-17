@@ -1,7 +1,15 @@
 import styles from '@/styles/Projects.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BookOpen, InstagramLogo, LinkedinLogo, User } from 'phosphor-react';
+import {
+  BookOpen,
+  CaretLeft,
+  CaretRight,
+  InstagramLogo,
+  LinkedinLogo,
+  User,
+} from 'phosphor-react';
+import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Project } from './Project';
 
@@ -54,6 +62,12 @@ export const Projects = () => {
         <Swiper
           className={styles.projectsSwiper}
           spaceBetween={32}
+          allowTouchMove={false}
+          navigation={{
+            prevEl: '.prev',
+            nextEl: '.next',
+          }}
+          modules={[Navigation]}
           breakpoints={{
             876: {
               slidesPerView: 2,
@@ -65,6 +79,12 @@ export const Projects = () => {
               slidesPerView: 2,
             },
           }}>
+          <button className={`${styles.prev} prev`}>
+            <CaretLeft
+              size={48}
+              color="#ffffff"
+            />
+          </button>
           {Array.from(Array(10).keys()).map((chunk: any, index: number) => {
             return (
               <SwiperSlide key={index}>
@@ -72,22 +92,13 @@ export const Projects = () => {
               </SwiperSlide>
             );
           })}
+          <button className={`${styles.next} next`}>
+            <CaretRight
+              size={48}
+              color="#ffffff"
+            />
+          </button>
         </Swiper>
-        <small>Arraste para ver mais.</small>
-        <div className={styles.social}>
-          <Link href="#">
-            <LinkedinLogo
-              color="#ffffff"
-              size={24}
-            />
-          </Link>
-          <Link href="#">
-            <InstagramLogo
-              color="#ffffff"
-              size={24}
-            />
-          </Link>
-        </div>
       </div>
     </section>
   );

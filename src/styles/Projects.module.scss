@@ -101,56 +101,43 @@
   .projectsContainer {
     background: var(--white);
     height: calc(100% - 154px);
-    padding: 1rem;
-    position: relative;
+    padding-block: 1rem;
 
-    @media (min-width: 550px) {
-      padding: 2rem;
+    @media (min-width: 768px) {
+      padding-block: 2rem;
     }
 
     @media (min-width: 1080px) {
       height: 100vh;
       width: calc(100vw - 375px);
-      padding: 6rem 2rem 2rem;
-      padding-right: 4rem;
+      padding-top: 6rem;
+    }
+
+    .next,
+    .prev {
+      position: absolute;
+      top: 50%;
+      z-index: 10;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
     }
 
     .projectsSwiper {
-      height: calc(100% - 61px - 2rem);
+      height: 100%;
+      position: relative;
+      margin-inline: 1rem;
 
-      @media (min-width: 1080px) {
-        height: calc(100vh - 10rem);
-      }
-    }
-
-    small {
-      margin-top: 0.5rem;
-      display: block;
-      color: var(--black);
-      text-align: center;
-      font-size: 0.875rem;
-      font-style: italic;
-    }
-
-    .social {
-      margin-top: auto;
-      position: absolute;
-      bottom: 2rem;
-      display: flex;
-      gap: 1rem;
-
-      @media (min-width: 1080px) {
-        display: none;
-      }
-
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: var(--black);
+      @media (min-width: 768px) {
+        margin-inline: 2rem;
       }
     }
   }
