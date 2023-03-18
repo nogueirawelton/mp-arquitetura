@@ -1,17 +1,33 @@
 import styles from '@/styles/Contact.module.scss';
+import emailjs from '@emailjs/browser';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Envelope, InstagramLogo, LinkedinLogo, Phone } from 'phosphor-react';
+import { FormEvent, useRef } from 'react';
 
 export const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  function handleSubmitForm(e: FormEvent) {
+    e.preventDefault();
+    emailjs.sendForm(
+      'service_yvkfoe9',
+      'template_7f453nb',
+      form.current || '',
+      'Wr02dEwNeXeh-psM8'
+    );
+  }
+
   return (
     <section className={styles.contact}>
       <div className={styles.container}>
         <h2>Contato</h2>
         <div className={styles.gridContainer}>
           <div className={styles.form}>
-            <form>
+            <form
+              ref={form}
+              onSubmit={handleSubmitForm}>
               <div>
                 <input
                   type="text"
